@@ -110,7 +110,7 @@
         <scene sceneID="sl0-D6-hZM">
             <objects>
                 <navigationController id="aNW-hS-gQP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Группы" id="Q00-0D-vOY"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="circle.grid.hex.fill" catalog="system" id="Q00-0D-vOY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IoE-Ds-JB3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,7 +159,7 @@
         <scene sceneID="ScO-n4-eMy">
             <objects>
                 <navigationController id="jaJ-AT-bhU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Друзья" id="UfV-fu-rRp"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.3" catalog="system" id="UfV-fu-rRp"/>
                     <navigationItem key="navigationItem" id="eQX-kj-3Ic"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N87-c6-yzx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -224,7 +224,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jaJ-AT-bhU" kind="relationship" relationship="viewControllers" id="ai5-Sv-dNC"/>
+                        <segue destination="jaJ-AT-bhU" kind="relationship" relationship="viewControllers" id="xaq-n3-39y"/>
                         <segue destination="aNW-hS-gQP" kind="relationship" relationship="viewControllers" id="DA5-i8-o5M"/>
                     </connections>
                 </tabBarController>
@@ -233,4 +233,8 @@
             <point key="canvasLocation" x="977" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle.grid.hex.fill" catalog="system" width="64" height="56"/>
+        <image name="person.3" catalog="system" width="72" height="35"/>
+    </resources>
 </document>
