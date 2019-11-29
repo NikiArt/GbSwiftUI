@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLn-S9-IY4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,6 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZuE-iZ-ctH">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="pLn-S9-IY4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C8F-lB-TeV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3rL-bS-WdL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w88-cv-M2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-738" y="114"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -56,7 +71,7 @@
                                         </state>
                                         <connections>
                                             <action selector="enterButtonOnClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sq-xt-8F9"/>
-                                            <segue destination="gGR-mT-nLG" kind="presentation" modalPresentationStyle="fullScreen" id="1rw-UO-bOE"/>
+                                            <segue destination="gGR-mT-nLG" kind="show" id="iu1-zA-7uw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,6 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4QN-7W-2Mb"/>
                     <connections>
                         <outlet property="login" destination="yYU-4m-CaJ" id="YZE-XT-okK"/>
                         <outlet property="password" destination="eig-Td-XFd" id="21r-3f-UFs"/>
