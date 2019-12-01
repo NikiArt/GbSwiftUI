@@ -12,7 +12,7 @@ final class DataBinder {
     
     static let instance = DataBinder()
     let userList: [User]
-    let groupList: [Group]
+    var groupList: [Group]
     
     init() {
         userList = [

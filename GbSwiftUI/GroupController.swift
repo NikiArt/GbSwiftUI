@@ -14,7 +14,12 @@ class GroupController: UITableViewController {
         super.viewDidLoad()
         let nib = UINib(nibName: "GroupCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "GroupCell")
+        tableView.rowHeight = CGFloat(96)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,5 +31,16 @@ class GroupController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
         cell.groupName.text = DataBinder.instance.groupList[indexPath.row].name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let delete = UIContextualAction(style: .destructive, title: "Удалить") { (_, view, _) in
+            DataBinder.instance.groupList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        delete.backgroundColor = UIColor.red
+        
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 }

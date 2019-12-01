@@ -23,6 +23,7 @@
 		5047F9942393DA2A0017E0EB /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9922393DA2A0017E0EB /* GroupCell.swift */; };
 		5047F9952393DA2A0017E0EB /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047F9932393DA2A0017E0EB /* GroupCell.xib */; };
 		5047F9972393E4BA0017E0EB /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9962393E4BA0017E0EB /* GroupController.swift */; };
+		5047F9992394198E0017E0EB /* GlobalGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9982394198E0017E0EB /* GlobalGroupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5047F9922393DA2A0017E0EB /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		5047F9932393DA2A0017E0EB /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		5047F9962393E4BA0017E0EB /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		5047F9982394198E0017E0EB /* GlobalGroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalGroupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				5047F9922393DA2A0017E0EB /* GroupCell.swift */,
 				5047F9932393DA2A0017E0EB /* GroupCell.xib */,
 				5047F9962393E4BA0017E0EB /* GroupController.swift */,
+				5047F9982394198E0017E0EB /* GlobalGroupController.swift */,
 			);
 			path = GbSwiftUI;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				5047F9942393DA2A0017E0EB /* GroupCell.swift in Sources */,
 				5047F970238B033C0017E0EB /* AppDelegate.swift in Sources */,
 				5047F972238B033C0017E0EB /* SceneDelegate.swift in Sources */,
+				5047F9992394198E0017E0EB /* GlobalGroupController.swift in Sources */,
 				5047F9972393E4BA0017E0EB /* GroupController.swift in Sources */,
 				5047F989239398160017E0EB /* Group.swift in Sources */,
 				5047F98B239399110017E0EB /* DataBinder.swift in Sources */,
