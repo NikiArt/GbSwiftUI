@@ -229,32 +229,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbT-0M-x9w">
-                                            <rect key="frame" x="16" y="11.5" width="74" height="73"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS3-sQ-AJR" customClass="RoundedView" customModule="GbSwiftUI" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="8" width="74" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="74" id="lxZ-du-vJ9"/>
-                                                <constraint firstAttribute="width" secondItem="RbT-0M-x9w" secondAttribute="height" multiplier="1:1" id="r4F-8M-bPQ"/>
+                                                <constraint firstAttribute="width" constant="74" id="Su4-De-O2p"/>
+                                                <constraint firstAttribute="width" secondItem="RS3-sQ-AJR" secondAttribute="height" multiplier="1:1" id="wUe-44-S5d"/>
                                             </constraints>
-                                        </imageView>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIn-vI-MLy">
-                                            <rect key="frame" x="122" y="37.5" width="276" height="21"/>
+                                            <rect key="frame" x="106" y="37.5" width="292" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RbT-0M-x9w" firstAttribute="top" secondItem="vA0-Lc-LZV" secondAttribute="topMargin" id="0i5-hw-9y0"/>
+                                        <constraint firstItem="RS3-sQ-AJR" firstAttribute="leading" secondItem="vA0-Lc-LZV" secondAttribute="leading" constant="16" id="5fp-e1-xbq"/>
+                                        <constraint firstAttribute="bottom" secondItem="RS3-sQ-AJR" secondAttribute="bottom" constant="8" id="7dG-5g-9yA"/>
                                         <constraint firstAttribute="trailing" secondItem="gIn-vI-MLy" secondAttribute="trailing" constant="16" id="7pM-xW-g0K"/>
-                                        <constraint firstItem="RbT-0M-x9w" firstAttribute="leading" secondItem="vA0-Lc-LZV" secondAttribute="leadingMargin" constant="-4" id="8s6-8b-6Ep"/>
-                                        <constraint firstItem="RbT-0M-x9w" firstAttribute="centerY" secondItem="vA0-Lc-LZV" secondAttribute="centerY" id="IxN-Gj-8xo"/>
                                         <constraint firstItem="gIn-vI-MLy" firstAttribute="centerY" secondItem="vA0-Lc-LZV" secondAttribute="centerY" id="MjN-nw-oLh"/>
-                                        <constraint firstItem="RbT-0M-x9w" firstAttribute="bottom" secondItem="vA0-Lc-LZV" secondAttribute="bottomMargin" id="d7l-ye-WmX"/>
-                                        <constraint firstItem="gIn-vI-MLy" firstAttribute="leading" secondItem="RbT-0M-x9w" secondAttribute="trailing" constant="32" id="l7F-Hf-NvW"/>
+                                        <constraint firstItem="RS3-sQ-AJR" firstAttribute="centerY" secondItem="vA0-Lc-LZV" secondAttribute="centerY" id="PKk-pn-q4F"/>
+                                        <constraint firstItem="RS3-sQ-AJR" firstAttribute="top" secondItem="vA0-Lc-LZV" secondAttribute="top" constant="8" id="YdD-j1-IQm"/>
+                                        <constraint firstItem="gIn-vI-MLy" firstAttribute="leading" secondItem="vA0-Lc-LZV" secondAttribute="leading" constant="106" id="sIG-Tc-W1K"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="friendName" destination="gIn-vI-MLy" id="nK9-e5-iKo"/>
+                                    <outlet property="photo" destination="RS3-sQ-AJR" id="VCg-u5-cYA"/>
                                     <segue destination="Eog-4k-Txm" kind="show" trigger="accessoryAction" id="9Jy-qL-XJu"/>
                                 </connections>
                             </tableViewCell>
@@ -346,6 +348,5 @@
         <image name="circle.grid.hex.fill" catalog="system" width="64" height="56"/>
         <image name="flame.fill" catalog="system" width="54" height="64"/>
         <image name="person.3" catalog="system" width="72" height="35"/>
-        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

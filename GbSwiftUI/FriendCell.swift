@@ -11,6 +11,7 @@ import UIKit
 class FriendCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var photo: RoundedView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
