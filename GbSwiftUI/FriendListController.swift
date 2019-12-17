@@ -23,6 +23,7 @@ class FriendListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendCell
         cell.friendName.text = DataBinder.instance.userList[indexPath.row].name
+        cell.photo.image.image = UIImage(named: "ava")
         return cell
     }
     

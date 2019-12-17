@@ -24,6 +24,8 @@
 		5047F9952393DA2A0017E0EB /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047F9932393DA2A0017E0EB /* GroupCell.xib */; };
 		5047F9972393E4BA0017E0EB /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9962393E4BA0017E0EB /* GroupController.swift */; };
 		5047F9992394198E0017E0EB /* GlobalGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9982394198E0017E0EB /* GlobalGroupController.swift */; };
+		5047F99E239ECF940017E0EB /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F99D239ECF940017E0EB /* RoundedView.swift */; };
+		5047F9A0239F677E0017E0EB /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F99F239F677E0017E0EB /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5047F9932393DA2A0017E0EB /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		5047F9962393E4BA0017E0EB /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		5047F9982394198E0017E0EB /* GlobalGroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalGroupController.swift; sourceTree = "<group>"; };
+		5047F99D239ECF940017E0EB /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		5047F99F239F677E0017E0EB /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		5047F96E238B033C0017E0EB /* GbSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5047F99A239ECED80017E0EB /* customViews */,
 				5047F985239397F60017E0EB /* model */,
 				5047F96F238B033C0017E0EB /* AppDelegate.swift */,
 				5047F971238B033C0017E0EB /* SceneDelegate.swift */,
@@ -106,6 +111,15 @@
 				5047F98A239399110017E0EB /* DataBinder.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		5047F99A239ECED80017E0EB /* customViews */ = {
+			isa = PBXGroup;
+			children = (
+				5047F99D239ECF940017E0EB /* RoundedView.swift */,
+				5047F99F239F677E0017E0EB /* LikeButton.swift */,
+			);
+			path = customViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +196,7 @@
 			files = (
 				5047F98F2393C5CC0017E0EB /* Photos.swift in Sources */,
 				5047F974238B033C0017E0EB /* ViewController.swift in Sources */,
+				5047F99E239ECF940017E0EB /* RoundedView.swift in Sources */,
 				5047F9942393DA2A0017E0EB /* GroupCell.swift in Sources */,
 				5047F970238B033C0017E0EB /* AppDelegate.swift in Sources */,
 				5047F972238B033C0017E0EB /* SceneDelegate.swift in Sources */,
@@ -192,6 +207,7 @@
 				5047F9912393C60B0017E0EB /* PhotoCell.swift in Sources */,
 				5047F98D2393AC980017E0EB /* FriendListController.swift in Sources */,
 				5047F987239398090017E0EB /* User.swift in Sources */,
+				5047F9A0239F677E0017E0EB /* LikeButton.swift in Sources */,
 				5047F984239397040017E0EB /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
