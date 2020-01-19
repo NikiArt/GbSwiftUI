@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3rL-bS-WdL"/>
+                        <segue destination="HzB-Vn-chF" kind="relationship" relationship="rootViewController" id="cgV-WK-7Pg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w88-cv-M2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXi-tE-aRW">
-                                <rect key="frame" x="0.0" y="44" width="768" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="818"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eig-Td-XFd">
                                         <rect key="frame" x="111" y="379" width="192" height="34"/>
@@ -72,7 +72,6 @@
                                         </state>
                                         <connections>
                                             <action selector="enterButtonOnClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sq-xt-8F9"/>
-                                            <segue destination="gGR-mT-nLG" kind="show" id="iu1-zA-7uw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -111,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.5" y="114.25781249999999"/>
+            <point key="canvasLocation" x="-74" y="-986"/>
         </scene>
         <!--Группы-->
         <scene sceneID="sl0-D6-hZM">
@@ -380,6 +379,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbR-uT-Wfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3870" y="-334"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="ejq-Kz-SZO">
+            <objects>
+                <viewController id="HzB-Vn-chF" customClass="LoginController" customModule="GbSwiftUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r3k-E6-6aS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jpL-Hq-oAt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Cu-ga-i61"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Qf-W9-bd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.84057971014494" y="103.79464285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h2r-HU-IGk">
