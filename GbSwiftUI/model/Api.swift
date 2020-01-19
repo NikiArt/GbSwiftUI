@@ -23,8 +23,20 @@ class Api {
             print("Пользователь не авторизован")
             return nil
         }
-        AF.request("https://api.vk.com/method/friends.get?access_token=\(ConnectingPref.shared.token)&v=5.103").responseJSON(completionHandler: {
-            (response) in print(response.value)
+        AF.request("https://api.vk.com/method/friends.get?access_token=\(ConnectingPref.shared.token)&fields=nickname,photo_50&v=5.103").responseData(completionHandler: {
+            (response) in
+            
+            guard let data = response.value else {
+                return
+            }
+            do {
+                let responseFriends = try JSONDecoder().decode(Response.self, from: data)
+                DataBinder.instance.userList = responseFriends.response.items
+                DataBinder.instance.getSectionStructure()
+                print(responseFriends)
+            } catch {
+                print(error)
+            }
         })
         return ""
     }
@@ -60,6 +72,15 @@ class Api {
             (response) in print(response.value)
         })
         return ""
+    }
+    
+    struct ResponseFriends: Decodable {
+        var count: Int
+        var items: [User]
+    }
+    
+    struct Response: Decodable {
+        var response: ResponseFriends
     }
     
 }
