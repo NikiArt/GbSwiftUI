@@ -61,9 +61,15 @@ extension LoginController: WKNavigationDelegate {
         }
 
         let token = params["access_token"]
-        Api.shared.sessionToken = token ?? ""
+        let userId = params["user_id"]
+        ConnectingPref.shared.token = token ?? ""
+        ConnectingPref.shared.userId = userId ?? ""
         print(token)
-
+        print(userId)
+        //Api.shared.getUserGroupsList()
+        //Api.shared.getFriendsList()
+        //Api.shared.getUserPhotos()
+        Api.shared.searchGroups(searchString: "swift")
 
         decisionHandler(.cancel)
     }
