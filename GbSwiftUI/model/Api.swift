@@ -30,7 +30,7 @@ class Api {
                 return
             }
             do {
-                let responseFriends = try JSONDecoder().decode(Response.self, from: data)
+                let responseFriends = try JSONDecoder().decode(Response<ResponseFriends>.self, from: data)
                 DataBinder.instance.userList = responseFriends.response.items
                 DataBinder.instance.getSectionStructure()
                 print(responseFriends)
@@ -46,8 +46,19 @@ class Api {
             print("Пользователь не авторизован")
             return nil
         }
-        AF.request("https://api.vk.com/method/groups.get?extended=1&access_token=\(ConnectingPref.shared.token)&v=5.103").responseJSON(completionHandler: {
-            (response) in print(response.value)
+        AF.request("https://api.vk.com/method/groups.get?extended=1&access_token=\(ConnectingPref.shared.token)&v=5.103").responseData(completionHandler: {
+            (response) in
+            
+            guard let data = response.value else {
+                return
+            }
+            do {
+                let responseGroups = try JSONDecoder().decode(Response<ResponseGroups>.self, from: data)
+                DataBinder.instance.groupList = responseGroups.response.items
+                print(responseGroups)
+            } catch {
+                print(error)
+            }
         })
         return ""
     }
@@ -79,8 +90,13 @@ class Api {
         var items: [User]
     }
     
-    struct Response: Decodable {
-        var response: ResponseFriends
+    struct ResponseGroups: Decodable {
+        var count: Int
+        var items: [Group]
+    }
+    
+    struct Response<T: Decodable>: Decodable {
+        var response: T
     }
     
 }

@@ -18,16 +18,8 @@ final class DataBinder {
     
     static let instance = DataBinder()
     var userList: [User]?
-    var groupList = [
-                Group(name: "ВК"),
-                Group(name: "ТНТ"),
-                Group(name: "Swift"),
-                Group(name: "Программисты"),
-                Group(name: "Java"),
-                Group(name: "Музыканты"),
-                Group(name: "Рисуем все"),
-                Group(name: "Geekbrains")
-            ]
+    var groupList: [Group]?
+    var globalGroupList: [Group]?
     var friendsSection = [Section<User>]()
     
     private init() {}

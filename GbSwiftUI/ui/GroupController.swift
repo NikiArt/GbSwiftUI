@@ -24,19 +24,19 @@ class GroupController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DataBinder.instance.groupList.count
+        return DataBinder.instance.groupList?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
-        cell.groupName.text = DataBinder.instance.groupList[indexPath.row].name
+        cell.groupName.text = DataBinder.instance.groupList?[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let delete = UIContextualAction(style: .destructive, title: "Удалить") { (_, view, _) in
-            DataBinder.instance.groupList.remove(at: indexPath.row)
+            DataBinder.instance.groupList?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         delete.backgroundColor = UIColor.red
