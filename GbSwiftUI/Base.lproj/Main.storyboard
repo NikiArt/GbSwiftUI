@@ -172,9 +172,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="tdA-xq-4Lh" userLabel="Group Search">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="h8Y-Sa-bUE" id="2Wv-n7-mjt"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="96" id="0Dq-oR-j20" customClass="GroupCell" customModule="GbSwiftUI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Dq-oR-j20" id="8rh-Zx-rkY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -188,6 +196,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lhz-E2-Lni"/>
+                    <connections>
+                        <outlet property="groupSearch" destination="tdA-xq-4Lh" id="ggV-IZ-WcA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgR-8D-ZjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

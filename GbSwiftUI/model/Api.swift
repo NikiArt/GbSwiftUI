@@ -79,8 +79,19 @@ class Api {
             print("Пользователь не авторизован")
             return nil
         }
-        AF.request("https://api.vk.com/method/groups.search?q=\(searchString)&access_token=\(ConnectingPref.shared.token)&v=5.103").responseJSON(completionHandler: {
-            (response) in print(response.value)
+        AF.request("https://api.vk.com/method/groups.search?q=\(searchString)&access_token=\(ConnectingPref.shared.token)&v=5.103").responseData(completionHandler: {
+            (response) in
+            
+            guard let data = response.value else {
+                return
+            }
+            do {
+                let responseGroups = try JSONDecoder().decode(Response<ResponseGroups>.self, from: data)
+                DataBinder.instance.globalGroupList = responseGroups.response.items
+                print(responseGroups)
+            } catch {
+                print(error)
+            }
         })
         return ""
     }

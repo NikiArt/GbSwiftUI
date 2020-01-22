@@ -9,24 +9,26 @@
 import UIKit
 
 class GlobalGroupController: UITableViewController {
-    let array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    
+    @IBOutlet weak var groupSearch: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "GroupCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "GroupCell")
         tableView.rowHeight = CGFloat(96)
+        groupSearch.delegate = self
         
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return DataBinder.instance.globalGroupList?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
-        cell.groupName.text = "Группа \(indexPath.row)"
+        cell.groupName.text = DataBinder.instance.globalGroupList?[indexPath.row].name
         return cell
     }
     
@@ -52,4 +54,18 @@ class GlobalGroupController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: [add])
     }
+}
+
+extension GlobalGroupController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        Api.shared.searchGroups(searchString: searchText)
+            
+        tableView.reloadData()
+        }
+        
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            view.endEditing(true)
+        }
+        
 }
