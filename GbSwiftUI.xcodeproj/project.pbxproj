@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2401DD52D098CC71ABF0E5D7 /* Pods_GbSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1E3E567C5571B5D5776FFE /* Pods_GbSwiftUI.framework */; };
 		5047F970238B033C0017E0EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F96F238B033C0017E0EB /* AppDelegate.swift */; };
 		5047F972238B033C0017E0EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F971238B033C0017E0EB /* SceneDelegate.swift */; };
 		5047F974238B033C0017E0EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F973238B033C0017E0EB /* ViewController.swift */; };
@@ -29,9 +30,12 @@
 		50D19F3223C093800009D23F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D19F3023C093800009D23F /* NewsCell.swift */; };
 		50D19F3323C093800009D23F /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D19F3123C093800009D23F /* NewsCell.xib */; };
 		50D19F3523CB25EC0009D23F /* ConnectingPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D19F3423CB25EC0009D23F /* ConnectingPref.swift */; };
+		50D19F3823CF9BBC0009D23F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D19F3723CF9BBC0009D23F /* LoginController.swift */; };
+		50D19F3A23CF9C670009D23F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D19F3923CF9C670009D23F /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0462FE2FECF153729254913E /* Pods-GbSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GbSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-GbSwiftUI/Pods-GbSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		5047F96C238B033C0017E0EB /* GbSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GbSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5047F96F238B033C0017E0EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5047F971238B033C0017E0EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,10 @@
 		50D19F3023C093800009D23F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		50D19F3123C093800009D23F /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		50D19F3423CB25EC0009D23F /* ConnectingPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingPref.swift; sourceTree = "<group>"; };
+		50D19F3723CF9BBC0009D23F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		50D19F3923CF9C670009D23F /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		6A1E3E567C5571B5D5776FFE /* Pods_GbSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GbSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2B56BAA85682E9DC557676 /* Pods-GbSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GbSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-GbSwiftUI/Pods-GbSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2401DD52D098CC71ABF0E5D7 /* Pods_GbSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CB3584782C89D7C3C3D3C7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A1E3E567C5571B5D5776FFE /* Pods_GbSwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5047F963238B033C0017E0EB = {
 			isa = PBXGroup;
 			children = (
 				5047F96E238B033C0017E0EB /* GbSwiftUI */,
 				5047F96D238B033C0017E0EB /* Products */,
+				E267DDB92A75B2C3D36A0F51 /* Pods */,
+				2CB3584782C89D7C3C3D3C7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,25 +107,17 @@
 		5047F96E238B033C0017E0EB /* GbSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				50D19F3623CF96030009D23F /* ui */,
 				5047F99A239ECED80017E0EB /* customViews */,
 				5047F985239397F60017E0EB /* model */,
 				5047F96F238B033C0017E0EB /* AppDelegate.swift */,
 				5047F971238B033C0017E0EB /* SceneDelegate.swift */,
-				5047F973238B033C0017E0EB /* ViewController.swift */,
 				5047F975238B033C0017E0EB /* Main.storyboard */,
 				5047F978238B03410017E0EB /* Assets.xcassets */,
 				5047F97A238B03410017E0EB /* LaunchScreen.storyboard */,
 				5047F97D238B03410017E0EB /* Info.plist */,
-				5047F983239397040017E0EB /* FriendCell.swift */,
-				5047F98C2393AC980017E0EB /* FriendListController.swift */,
-				5047F98E2393C5CC0017E0EB /* Photos.swift */,
-				5047F9902393C60B0017E0EB /* PhotoCell.swift */,
-				50D19F3023C093800009D23F /* NewsCell.swift */,
 				50D19F3123C093800009D23F /* NewsCell.xib */,
-				5047F9922393DA2A0017E0EB /* GroupCell.swift */,
 				5047F9932393DA2A0017E0EB /* GroupCell.xib */,
-				5047F9962393E4BA0017E0EB /* GroupController.swift */,
-				5047F9982394198E0017E0EB /* GlobalGroupController.swift */,
 			);
 			path = GbSwiftUI;
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 				5047F988239398160017E0EB /* Group.swift */,
 				5047F98A239399110017E0EB /* DataBinder.swift */,
 				50D19F3423CB25EC0009D23F /* ConnectingPref.swift */,
+				50D19F3923CF9C670009D23F /* Api.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -131,6 +143,32 @@
 			path = customViews;
 			sourceTree = "<group>";
 		};
+		50D19F3623CF96030009D23F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				5047F973238B033C0017E0EB /* ViewController.swift */,
+				5047F983239397040017E0EB /* FriendCell.swift */,
+				5047F98C2393AC980017E0EB /* FriendListController.swift */,
+				5047F98E2393C5CC0017E0EB /* Photos.swift */,
+				5047F9902393C60B0017E0EB /* PhotoCell.swift */,
+				50D19F3023C093800009D23F /* NewsCell.swift */,
+				5047F9922393DA2A0017E0EB /* GroupCell.swift */,
+				5047F9962393E4BA0017E0EB /* GroupController.swift */,
+				5047F9982394198E0017E0EB /* GlobalGroupController.swift */,
+				50D19F3723CF9BBC0009D23F /* LoginController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		E267DDB92A75B2C3D36A0F51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C2B56BAA85682E9DC557676 /* Pods-GbSwiftUI.debug.xcconfig */,
+				0462FE2FECF153729254913E /* Pods-GbSwiftUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5047F980238B03410017E0EB /* Build configuration list for PBXNativeTarget "GbSwiftUI" */;
 			buildPhases = (
+				2A4A8F2E9161C2DCD785550A /* [CP] Check Pods Manifest.lock */,
 				5047F968238B033C0017E0EB /* Sources */,
 				5047F969238B033C0017E0EB /* Frameworks */,
 				5047F96A238B033C0017E0EB /* Resources */,
+				DF9E2B3E665585AB7B059173 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +239,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A4A8F2E9161C2DCD785550A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GbSwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF9E2B3E665585AB7B059173 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GbSwiftUI/Pods-GbSwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GbSwiftUI/Pods-GbSwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GbSwiftUI/Pods-GbSwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5047F968238B033C0017E0EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -207,6 +289,7 @@
 				5047F98F2393C5CC0017E0EB /* Photos.swift in Sources */,
 				5047F974238B033C0017E0EB /* ViewController.swift in Sources */,
 				5047F99E239ECF940017E0EB /* RoundedView.swift in Sources */,
+				50D19F3A23CF9C670009D23F /* Api.swift in Sources */,
 				5047F9942393DA2A0017E0EB /* GroupCell.swift in Sources */,
 				5047F970238B033C0017E0EB /* AppDelegate.swift in Sources */,
 				5047F972238B033C0017E0EB /* SceneDelegate.swift in Sources */,
@@ -217,6 +300,7 @@
 				5047F98B239399110017E0EB /* DataBinder.swift in Sources */,
 				5047F9912393C60B0017E0EB /* PhotoCell.swift in Sources */,
 				5047F98D2393AC980017E0EB /* FriendListController.swift in Sources */,
+				50D19F3823CF9BBC0009D23F /* LoginController.swift in Sources */,
 				5047F987239398090017E0EB /* User.swift in Sources */,
 				50D19F3523CB25EC0009D23F /* ConnectingPref.swift in Sources */,
 				5047F9A0239F677E0017E0EB /* LikeButton.swift in Sources */,
@@ -362,6 +446,7 @@
 		};
 		5047F981238B03410017E0EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C2B56BAA85682E9DC557676 /* Pods-GbSwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +464,7 @@
 		};
 		5047F982238B03410017E0EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0462FE2FECF153729254913E /* Pods-GbSwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -11,8 +11,8 @@ import Foundation
 class ConnectingPref {
     static let shared = ConnectingPref()
     
-    let token = ""
-    var userId: Int = 0
+    var token = ""
+    var userId = ""
     
     private init() {}
 }
