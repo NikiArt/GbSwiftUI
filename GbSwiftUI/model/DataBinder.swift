@@ -17,37 +17,16 @@ struct Section<T> {
 final class DataBinder {
     
     static let instance = DataBinder()
-    let userList: [User]
-    var groupList: [Group]
+    var userList: [User]?
+    var groupList: [Group]?
+    var globalGroupList: [Group]?
     var friendsSection = [Section<User>]()
     
-    init() {
-        userList = [
-            User(name: "Вася Иванов"),
-            User(name: "Иван Васин"),
-            User(name: "Вася Пупкин"),
-            User(name: "Петя Алексеев"),
-            User(name: "Андрей Исаев"),
-            User(name: "Кирилл Петров"),
-            User(name: "Алексей Панферов")
-        ]
-        groupList = [
-            Group(name: "ВК"),
-            Group(name: "ТНТ"),
-            Group(name: "Swift"),
-            Group(name: "Программисты"),
-            Group(name: "Java"),
-            Group(name: "Музыканты"),
-            Group(name: "Рисуем все"),
-            Group(name: "Geekbrains")
-        ]
-        
-        getSectionStructure()
-    }
+    private init() {}
     
     func getSectionStructure() {
-        let sortedFriendList = userList.sorted{$0.name < $1.name}
-        
+        let sortedFriendList = userList!.sorted{$0.name < $1.name}
+
         let friendDictionary = Dictionary.init(grouping: sortedFriendList) {
             $0.name.prefix(1)
         }

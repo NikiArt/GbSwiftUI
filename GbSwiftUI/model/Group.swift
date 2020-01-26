@@ -8,13 +8,21 @@
 
 import Foundation
 
-class Group {
+class Group: Decodable {
     
-    var id: String = ""
-    let name: String
+    var id: Int = 0
+    var name: String = ""
     var photoUri: String = ""
+    
+    init(){}
     
     init (name: String){
         self.name = name
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case photoUri = "photo_50"
+        case name
     }
 }

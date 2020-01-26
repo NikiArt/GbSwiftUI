@@ -55,7 +55,7 @@ class FriendListController: UITableViewController {
 extension FriendListController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let friendDictionary = Dictionary.init(grouping: DataBinder.instance.userList.filter { user -> Bool in
+        let friendDictionary = Dictionary.init(grouping: DataBinder.instance.userList!.filter { user -> Bool in
             return searchText.isEmpty ? true : user.name.lowercased().contains(searchText.lowercased())
             
         }) { $0.name.prefix(1)}

@@ -66,11 +66,13 @@ extension LoginController: WKNavigationDelegate {
         ConnectingPref.shared.userId = userId ?? ""
         print(token)
         print(userId)
-        //Api.shared.getUserGroupsList()
-        //Api.shared.getFriendsList()
+        Api.shared.getUserGroupsList()
+        Api.shared.getFriendsList()
         //Api.shared.getUserPhotos()
-        Api.shared.searchGroups(searchString: "swift")
+        //Api.shared.searchGroups(searchString: "swift")
 
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabBarContrl") as UIViewController
+        self.show(nextViewController, sender: self)
         decisionHandler(.cancel)
     }
 }
