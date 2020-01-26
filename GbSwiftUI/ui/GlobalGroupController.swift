@@ -29,6 +29,7 @@ class GlobalGroupController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
         cell.groupName.text = DataBinder.instance.globalGroupList?[indexPath.row].name
+        cell.photo.kf.setImage(with: URL(string: DataBinder.instance.globalGroupList?[indexPath.row].photoUri ?? ""))
         return cell
     }
     

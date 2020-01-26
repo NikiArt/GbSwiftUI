@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FriendListController: UITableViewController {
 
@@ -29,7 +30,8 @@ class FriendListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendCell
         cell.friendName.text = DataBinder.instance.friendsSection[indexPath.section].items[indexPath.row].name
-        cell.photo.image.image = UIImage(named: "ava")
+        cell.photo.image.kf.setImage(with: URL(string: DataBinder.instance.friendsSection[indexPath.section].items[indexPath.row].photoUri))
+        //cell.photo.image.image = UIImage(named: "ava")
         return cell
     }
     
