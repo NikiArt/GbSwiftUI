@@ -63,13 +63,24 @@ class Api {
         return ""
     }
     
-    func getUserPhotos() -> String? {
+    func getUserPhotos(userId: String) -> String? {
         guard !ConnectingPref.shared.token.isEmpty else {
             print("Пользователь не авторизован")
             return nil
         }
-        AF.request("https://api.vk.com/method/photos.getAll?count=200&access_token=\(ConnectingPref.shared.token)&v=5.103").responseJSON(completionHandler: {
-            (response) in print(response.value)
+        AF.request("https://api.vk.com/method/photos.getAll?count=200&owner_id=\(userId)&access_token=\(ConnectingPref.shared.token)&v=5.103").responseData(completionHandler: {
+            (response) in
+            
+            guard let data = response.value else {
+                return
+            }
+//            do {
+//                let responseGroups = try JSONDecoder().decode(Response<ResponseGroups>.self, from: data)
+//                DataBinder.instance.groupList = responseGroups.response.items
+//                print(responseGroups)
+//            } catch {
+//                print(error)
+//            }
         })
         return ""
     }
@@ -95,19 +106,4 @@ class Api {
         })
         return ""
     }
-    
-    struct ResponseFriends: Decodable {
-        var count: Int
-        var items: [User]
-    }
-    
-    struct ResponseGroups: Decodable {
-        var count: Int
-        var items: [Group]
-    }
-    
-    struct Response<T: Decodable>: Decodable {
-        var response: T
-    }
-    
 }

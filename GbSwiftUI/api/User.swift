@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
 class User: Decodable {
     
-    var id = 0
-    var name: String {
+   @objc dynamic var id = 0
+    @objc dynamic var name: String {
         get {
             return "\(self.firstName) \(self.lastName)"
         }
         set {}
     }
-    var photoUri = ""
-    var firstName = ""
-    var lastName = ""
+    @objc dynamic var photoUri = ""
+    @objc dynamic var firstName = ""
+    @objc dynamic var lastName = ""
     
     init(){}
     

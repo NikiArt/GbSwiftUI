@@ -21,6 +21,7 @@ final class DataBinder {
     var groupList: [Group]?
     var globalGroupList: [Group]?
     var friendsSection = [Section<User>]()
+    var photos = [String]()
     
     private init() {}
     
