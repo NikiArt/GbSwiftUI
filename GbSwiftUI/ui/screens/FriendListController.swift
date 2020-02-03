@@ -23,7 +23,7 @@ class FriendListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listPresenter?.friendsList?.count ?? 0
+        return listPresenter?.sortedFriendsList[section].items.count ?? 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,8 +32,8 @@ class FriendListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendCell
-        //cell.friendName.text = listPresenter?.sortedFriendsList[indexPath.section].items[indexPath.row].name
-       // cell.photo.image.kf.setImage(with: URL(string: (listPresenter?.sortedFriendsList[indexPath.section].items[indexPath.row].photoUri)!))
+        cell.friendName.text = listPresenter?.sortedFriendsList[indexPath.section].items[indexPath.row].name
+        cell.photo.image.kf.setImage(with: URL(string: (listPresenter?.sortedFriendsList[indexPath.section].items[indexPath.row].photoUri)!))
         //cell.photo.image.image = UIImage(named: "ava")
         return cell
     }
