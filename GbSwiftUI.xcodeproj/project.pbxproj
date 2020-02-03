@@ -27,6 +27,8 @@
 		5047F9992394198E0017E0EB /* GlobalGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F9982394198E0017E0EB /* GlobalGroupController.swift */; };
 		5047F99E239ECF940017E0EB /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F99D239ECF940017E0EB /* RoundedView.swift */; };
 		5047F9A0239F677E0017E0EB /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047F99F239F677E0017E0EB /* LikeButton.swift */; };
+		50827DFE23E737C3000AB2B7 /* DbRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50827DFD23E737C3000AB2B7 /* DbRepo.swift */; };
+		50827E0123E75464000AB2B7 /* FriendListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50827E0023E75464000AB2B7 /* FriendListPresenter.swift */; };
 		50A740C723DDE00200E1FD22 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 50A740C623DDE00200E1FD22 /* Kingfisher */; };
 		50A740CA23DDF5E800E1FD22 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A740C923DDF5E800E1FD22 /* Response.swift */; };
 		50A740CC23DDF5F500E1FD22 /* ResponseGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A740CB23DDF5F500E1FD22 /* ResponseGroups.swift */; };
@@ -61,6 +63,8 @@
 		5047F9982394198E0017E0EB /* GlobalGroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalGroupController.swift; sourceTree = "<group>"; };
 		5047F99D239ECF940017E0EB /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5047F99F239F677E0017E0EB /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		50827DFD23E737C3000AB2B7 /* DbRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbRepo.swift; sourceTree = "<group>"; };
+		50827E0023E75464000AB2B7 /* FriendListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenter.swift; sourceTree = "<group>"; };
 		50A740C923DDF5E800E1FD22 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		50A740CB23DDF5F500E1FD22 /* ResponseGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGroups.swift; sourceTree = "<group>"; };
 		50A740CD23DDFB0400E1FD22 /* ResponseFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFriends.swift; sourceTree = "<group>"; };
@@ -115,9 +119,9 @@
 		5047F96E238B033C0017E0EB /* GbSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				50827DFF23E75438000AB2B7 /* presenters */,
 				50A740C823DDF5C600E1FD22 /* api */,
 				50D19F3623CF96030009D23F /* ui */,
-				5047F99A239ECED80017E0EB /* customViews */,
 				5047F985239397F60017E0EB /* model */,
 				5047F96F238B033C0017E0EB /* AppDelegate.swift */,
 				5047F971238B033C0017E0EB /* SceneDelegate.swift */,
@@ -125,8 +129,6 @@
 				5047F978238B03410017E0EB /* Assets.xcassets */,
 				5047F97A238B03410017E0EB /* LaunchScreen.storyboard */,
 				5047F97D238B03410017E0EB /* Info.plist */,
-				50D19F3123C093800009D23F /* NewsCell.xib */,
-				5047F9932393DA2A0017E0EB /* GroupCell.xib */,
 			);
 			path = GbSwiftUI;
 			sourceTree = "<group>";
@@ -134,9 +136,14 @@
 		5047F985239397F60017E0EB /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5047F986239398090017E0EB /* User.swift */,
+				5047F988239398160017E0EB /* Group.swift */,
+				50A740C923DDF5E800E1FD22 /* Response.swift */,
+				50A740CB23DDF5F500E1FD22 /* ResponseGroups.swift */,
+				50A740CD23DDFB0400E1FD22 /* ResponseFriends.swift */,
 				5047F98A239399110017E0EB /* DataBinder.swift */,
 				50D19F3423CB25EC0009D23F /* ConnectingPref.swift */,
-				50D19F3923CF9C670009D23F /* Api.swift */,
+				50827DFD23E737C3000AB2B7 /* DbRepo.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -150,31 +157,46 @@
 			path = customViews;
 			sourceTree = "<group>";
 		};
+		50827DFF23E75438000AB2B7 /* presenters */ = {
+			isa = PBXGroup;
+			children = (
+				50827E0023E75464000AB2B7 /* FriendListPresenter.swift */,
+			);
+			path = presenters;
+			sourceTree = "<group>";
+		};
 		50A740C823DDF5C600E1FD22 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				5047F986239398090017E0EB /* User.swift */,
-				5047F988239398160017E0EB /* Group.swift */,
-				50A740C923DDF5E800E1FD22 /* Response.swift */,
-				50A740CB23DDF5F500E1FD22 /* ResponseGroups.swift */,
-				50A740CD23DDFB0400E1FD22 /* ResponseFriends.swift */,
+				50D19F3923CF9C670009D23F /* Api.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		50C520BB23E205290034DA05 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				5047F973238B033C0017E0EB /* ViewController.swift */,
+				5047F98C2393AC980017E0EB /* FriendListController.swift */,
+				5047F9962393E4BA0017E0EB /* GroupController.swift */,
+				5047F9982394198E0017E0EB /* GlobalGroupController.swift */,
+				50D19F3723CF9BBC0009D23F /* LoginController.swift */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 		50D19F3623CF96030009D23F /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				5047F973238B033C0017E0EB /* ViewController.swift */,
+				5047F99A239ECED80017E0EB /* customViews */,
+				50C520BB23E205290034DA05 /* screens */,
 				5047F983239397040017E0EB /* FriendCell.swift */,
-				5047F98C2393AC980017E0EB /* FriendListController.swift */,
 				5047F98E2393C5CC0017E0EB /* Photos.swift */,
 				5047F9902393C60B0017E0EB /* PhotoCell.swift */,
 				50D19F3023C093800009D23F /* NewsCell.swift */,
 				5047F9922393DA2A0017E0EB /* GroupCell.swift */,
-				5047F9962393E4BA0017E0EB /* GroupController.swift */,
-				5047F9982394198E0017E0EB /* GlobalGroupController.swift */,
-				50D19F3723CF9BBC0009D23F /* LoginController.swift */,
+				50D19F3123C093800009D23F /* NewsCell.xib */,
+				5047F9932393DA2A0017E0EB /* GroupCell.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -330,8 +352,10 @@
 				5047F98D2393AC980017E0EB /* FriendListController.swift in Sources */,
 				50D19F3823CF9BBC0009D23F /* LoginController.swift in Sources */,
 				5047F987239398090017E0EB /* User.swift in Sources */,
+				50827DFE23E737C3000AB2B7 /* DbRepo.swift in Sources */,
 				50D19F3523CB25EC0009D23F /* ConnectingPref.swift in Sources */,
 				5047F9A0239F677E0017E0EB /* LikeButton.swift in Sources */,
+				50827E0123E75464000AB2B7 /* FriendListPresenter.swift in Sources */,
 				5047F984239397040017E0EB /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

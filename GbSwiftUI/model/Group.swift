@@ -9,21 +9,22 @@
 import Foundation
 import RealmSwift
 
-class Group: Decodable {
+class Group: Object, Decodable {
     
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var photoUri: String = ""
     
-    init(){}
+    required init(){}
     
     init (name: String){
+        super.init()
         self.name = name
     }
     
     enum CodingKeys: String, CodingKey {
         case id
-        case photoUri = "photo_50"
+        case photoUri = "photo_100"
         case name
     }
 }

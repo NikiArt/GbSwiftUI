@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class User: Decodable {
+class User: Object, Decodable {
     
    @objc dynamic var id = 0
     @objc dynamic var name: String {
@@ -22,18 +22,42 @@ class User: Decodable {
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
     
-    init(){}
+    required init(){}
     
     init(name: String) {
+        super.init()
         self.name = name
     }
     
     enum CodingKeys: String, CodingKey {
         case id
-        case photoUri = "photo_50"
+        case photoUri = "photo_100"
         case firstName = "first_name"
         case lastName = "last_name"
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["name"]
+    }
+    
+    func addToDb(friends: [User]) {
+            do {
+                let realm = try Realm()
+                print(realm.configuration.fileURL)
+                realm.beginWrite()
+                realm.add(friends, update: .modified)
+                try realm.commitWrite()
+                
+            } catch {
+                print(error)
+            }
+
+    }
+
     
 //    required init(from decoder: Decoder) throws {
 //        let mainDecoder = try decoder.container(keyedBy: CodingKeys.self)
