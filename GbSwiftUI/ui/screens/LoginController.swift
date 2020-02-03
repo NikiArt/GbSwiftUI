@@ -67,7 +67,9 @@ extension LoginController: WKNavigationDelegate {
         print(token)
         print(userId)
         Api.shared.getUserGroupsList()
+        
         Api.shared.getFriendsList()
+        //Api.shared.getFriendsList()
         //Api.shared.getUserPhotos()
         //Api.shared.searchGroups(searchString: "swift")
 
